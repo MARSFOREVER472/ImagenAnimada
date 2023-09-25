@@ -6,5 +6,10 @@ namespace WindMillAnimatedImages
         {
             InitializeComponent();
         }
+
+        private void GameTimerEvent(object sender, EventArgs e)
+        {
+            // EN INSTANTES...
+        }
     }
 }
