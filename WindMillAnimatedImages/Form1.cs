@@ -11,5 +11,15 @@ namespace WindMillAnimatedImages
         {
             // EN INSTANTES...
         }
+
+        private void DrawWindMillsEvent(object sender, PaintEventArgs e)
+        {
+            // EN INSTANTES...
+        }
+
+        private void AddWindMills()
+        {
+            // EN INSTANTES...
+        }
     }
 }
