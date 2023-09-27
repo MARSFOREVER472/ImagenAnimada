@@ -45,6 +45,7 @@
             BackgroundImage = Properties.Resources.skyBackGround;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            DoubleBuffered = true;
             Name = "Form1";
             Text = "Form1";
             Paint += DrawWindMillsEvent;

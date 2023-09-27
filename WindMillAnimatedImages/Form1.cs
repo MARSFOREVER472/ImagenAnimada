@@ -30,20 +30,29 @@ namespace WindMillAnimatedImages
 
         private void DrawWindMillsEvent(object sender, PaintEventArgs e)
         {
-            // EN INSTANTES...
+            // Método que perite dibujar manualmente la imagen que aparecerá en escena.
+
+            ImageAnimator.UpdateFrames(); // Se cargarán las imágenes animadas en la escena.
+
+            // Crearemos un foreach que permita en la escena dibujar todos los molinos de viento animados por medio de aparición.
+
+            foreach (WindMill tempImage in windMillCollection)
+            {
+                e.Graphics.DrawImage(tempImage.windMill, tempImage.posicionX, tempImage.posicionY, tempImage.ancho, tempImage.altura);
+            }
         }
 
         private void AddWindMills()
         {
             // Método que servirá de base para agregar molinos de viento.
 
-            WindMill molinosDeViento = new WindMill();
-            windMillCollection.Add(molinosDeViento);
+            WindMill molinosDeViento = new WindMill(); // Variable para los molinos de viento.
+            windMillCollection.Add(molinosDeViento); // Añadiremos automáticamente los molinos de viento en la escena.
 
             for (int i = 0; i < windMillCollection.Count; i++)
             {
                 ImageAnimator.Animate(windMillCollection[i].windMill, this.OnFrameChangeHandler);
-            }    
+            }
         }
 
         private void OnFrameChangeHandler(object? sender, EventArgs e)
