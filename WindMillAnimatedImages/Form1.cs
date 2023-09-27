@@ -15,7 +15,17 @@ namespace WindMillAnimatedImages
 
         private void GameTimerEvent(object sender, EventArgs e)
         {
-            // EN INSTANTES...
+            // Método para el temporizador de la escena.
+
+            tempTime--; // El temporizador comienza con una cuenta regresiva cada 20 segundos.
+
+            if (tempTime < 1) // Si el temporizador descuenta cada 1 segundo.
+            {
+                AddWindMills(); // LLama al método para que aparezca los molinos de viento en la escena.
+                tempTime = spawnTimer;
+            }
+
+            this.Text = "NÚMERO TOTAL DE LOS MOLINOS DE VIENTO EN ESTA ESCENA - " + windMillCollection.Count;
         }
 
         private void DrawWindMillsEvent(object sender, PaintEventArgs e)
